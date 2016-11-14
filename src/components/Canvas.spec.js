@@ -12,4 +12,11 @@ describe('Canvas', () => {
 
     expect(actual).to.equal(expected);
   });
+
+  it('should render its child components', () => {
+    const wrapper = shallow(<Canvas />);
+    expect(wrapper.contains(
+      <div>Here will be the SVGs</div>
+    )).to.equal(false);
+  });
 });
