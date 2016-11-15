@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
 import Canvas from './Canvas';
+import Character from './Character';
 
 describe('Canvas', () => {
   it('should render a div having the "canvas" class', () => {
@@ -14,9 +15,7 @@ describe('Canvas', () => {
   });
 
   it('should render its child components', () => {
-    const wrapper = shallow(<Canvas />);
-    expect(wrapper.contains(
-      <div>Here will be the SVGs</div>
-    )).to.equal(false);
+    const wrapper = shallow(<Canvas><Character /></Canvas>);
+    expect(wrapper.find(Character).length).to.equal(1);
   });
 });

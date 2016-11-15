@@ -20,3 +20,17 @@ process.env.NODE_ENV = 'test';
 // Register babel so that it will transpile ES6 to ES5
 // before our tests run.
 require('babel-register')();
+
+import { jsdom } from 'jsdom';
+
+const doc = jsdom('<!doctype html><html><body></body></html>');
+const win = doc.defaultView;
+
+global.document = doc;
+global.window = win;
+
+Object.keys(window).forEach((key) => {
+  if (!(key in global)) {
+    global[key] = window[key];
+  }
+});

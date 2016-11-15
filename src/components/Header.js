@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineLite, TweenMax } from 'gsap';
+import { TimelineLite } from 'gsap';
 
 class Header extends Component {
   componentDidMount() {

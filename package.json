@@ -31,6 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "gsap": "1.19.0",
+    "jsdom": "9.8.3",
     "object-assign": "4.1.0",
     "react": "15.3.2",
     "react-dom": "15.3.2",
@@ -72,6 +73,8 @@
     "html-webpack-plugin": "2.24.0",
     "isparta": "4.0.0",
     "istanbul": "0.4.4",
+    "jsdom": "9.8.3",
+    "jsdom-global": "2.1.0",
     "json-loader": "0.5.4",
     "mocha": "3.1.2",
     "mockdate": "1.0.4",
