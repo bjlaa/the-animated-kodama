@@ -2,7 +2,8 @@
   "presets": [
     "latest",
     "react",
-    "stage-1"
+    "stage-1",
+    "es2015"
   ],
   "env": {
     "development": {
