@@ -39,7 +39,13 @@ class Header extends Component {
         opacity: 1,
       },
       ease: Elastic.easeInOut,
-    }, 4.5);
+    }, 4.5)
+    .to(hTwo, 2, {
+      css: {
+        opacity: 0,
+        display: 'none',
+      },
+    });
   }
   render() {
     return (
