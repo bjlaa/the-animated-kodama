@@ -1,0 +1,13 @@
+.canvas {
+  display: none;
+  opacity: 0;
+}
+@import 'character';
+
+.sun {
+  transform: translate(-40%, -15%);
+}
+
+.ground {
+  transform: translate(0, -130%) scale(2);
+}

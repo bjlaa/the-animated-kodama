@@ -1,0 +1,22 @@
+.character {
+  transform: translate(0, -3000px);
+}
+.torso {
+  transform: translate(200%, -140%);
+}
+.right {
+  .arm {
+    transform: translate(120%, -200%);
+  }
+  .leg {
+    transform: translate(50%, -40%);
+  }
+}
+.left {
+  .arm {
+    transform: translate(250%, -520%);
+  }
+  .leg {
+    transform: translate(115%, -320%);
+  }
+}

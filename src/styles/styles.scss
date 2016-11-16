@@ -15,6 +15,8 @@ body {
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
+  height: 100vh;
+  width: 100vw;
 }
 
 td {
@@ -31,3 +33,4 @@ input.small { width: 46px; }
 td.fuel-savings-label { width: 175px; }
 
 @import 'header';
+@import  'canvas';

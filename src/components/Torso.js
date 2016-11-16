@@ -2,8 +2,8 @@ import React from 'react';
 
 const Torso = () => {
   return ( 
-    <svg width="120" height="120">
-      <ellipse cx="60" cy="60" rx="50" ry="25"/>
+    <svg className="torso" width="120" height="240">
+      <ellipse cx="40" cy="100" rx="40" ry="100"/>
     </svg>
   );
 };
