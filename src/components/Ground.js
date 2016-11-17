@@ -4,17 +4,18 @@ import { TweenMax } from 'gsap';
 class Ground extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       keyDownEvent: this.props.keyDownEvent,
-      rotationInstance: '',
+      keyUpEvent: this.props.keyUpEvent,
       isKeyDown: false,
       keyPressed: '',
+      rotationLeft: '',
     };
-    this.toggleKeyStatus = this.toggleKeyStatus.bind(this);
     this.saveKeyPressed = this.saveKeyPressed.bind(this);
+    this.setUpTweens = this.setUpTweens.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.rotateRightOrLeft = this.rotateRightOrLeft.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,73 +23,73 @@ class Ground extends Component {
       keyDownEvent: nextProps.keyDownEvent,
       keyUpEvent: nextProps.keyUpEvent,
     });
-  }
-
-  componentDidUpdate() {
     this.handleKeyDown(this.state.keyDownEvent);
     this.handleKeyUp(this.state.keyUpEvent);
-  }
-
-  toggleKeyStatus() {
-    this.setState({ isKeyDown: !this.state.isKeyDown });
   }
 
   saveKeyPressed(keyPressed) {
     this.setState({ keyPressed });
   }
+  setUpTweens() {
+    const ground = this.ground;
+    this.setState({
+      rotationLeft: TweenMax.to(ground, 0.5, { css: { rotation: '-=45', transformOrigin: '50% 50%'}, paused: true }),
+      rotationRight: TweenMax.to(ground, 0.5, { css: { rotation: '+=45', transformOrigin: '50% 50%'}, paused: true }),
+    });
+  }
 
   handleKeyDown(event) {
-    console.log(event);
-    if(event == '') {
-      return;
-    }
-    if (event.type == 'keydown') {
-      if (event.key === "ArrowLeft") {
-        if (!this.state.isKeyDown) {
-          this.toggleKeyStatus();        
+    this.setUpTweens();
+    if(event != '') {
+      if (event.type == 'keydown') {
+
+        if (event.key === 'ArrowLeft') {
+          if (this.state.keyPressed == 'right') {
+            this.state.rotationRight.pause();
+          }
+          if (this.state.keyPressed == '') {
+            this.state.rotationLeft.play();
+            return;
+          }
+
+          this.saveKeyPressed('left');
+          this.state.rotationLeft.resume();
         }
-        this.saveKeyPressed('left');
-        if (this.state.rotationInstance )
-        const rotationInstance = this.rotateRightOrLeft('left');
-        this.setState({ rotationInstance });
-        this.state.rotationInstance();
-      }      
+
+        if (event.key == 'ArrowRight') {
+          if (this.state.keyPressed == 'left') {
+            this.state.rotationLeft.pause();
+          }
+          if (this.state.keyPressed == '') {
+            this.state.rotationRight.play();
+            return;
+          }
+
+          this.saveKeyPressed('right');
+          this.state.rotationRight.resume();
+        }  
+      }
     }
   }
 
   handleKeyUp(event) {
-    if (event == '') {
-      return;
-    }
-    if (event.type == 'keyup') {
-      if (event.key === "ArrowLeft") {
-        if (this.state.rotationInstance != '') {
-          return;
+    if (event != '') {
+      if (event.type == 'keyup') {
+        if (event.key === "ArrowLeft") {
+          if (this.state.keyPressed == 'left') {
+            this.saveKeyPressed('');            
+          }
+          this.state.rotationLeft.pause();
         }
-      }      
-    }
-  }
 
-  rotateRightOrLeft(direction) {
-    if (direction == 'left') {
-      console.log('called');
-      return (() => {
-        const ground = this.ground;
-        TweenMax.to(
-          ground, 
-          1, 
-          { css: { rotation: '-=45', transformOrigin: '50% 50%'}, repeat: -1},
-        );
-      });      
-    }
-    return (() => {
-      const ground = this.ground;
-      TweenMax.to(
-        ground, 
-        1, 
-        { css: { rotation: '+=45', transformOrigin: '50% 50%'}, repeat: -1},
-      );
-    });    
+        if (event.key === "ArrowRight") {
+          if (this.state.keyPressed == 'right') {
+            this.saveKeyPressed('');            
+          }
+          this.state.rotationRight.pause();
+        }   
+      }
+    }    
   }
 
   render() {
