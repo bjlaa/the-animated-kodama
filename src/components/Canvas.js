@@ -24,8 +24,8 @@ class Canvas extends Component {
     return (
       <div className="canvas" ref={(canvas) => this.canvas = canvas}>
         <Sun />
-        <Character />
-        <Ground />
+        <Character keyDownEvent={this.props.keyDownEvent} keyUpEvent={this.props.keyUpEvent} />
+        <Ground keyDownEvent={this.props.keyDownEvent} keyUpEvent={this.props.keyUpEvent} />
       </div>
     );    
   }
