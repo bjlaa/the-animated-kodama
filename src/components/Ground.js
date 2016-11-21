@@ -8,9 +8,12 @@ class Ground extends Component {
     this.state = {
       keyDownEvent: this.props.keyDownEvent,
       keyUpEvent: this.props.keyUpEvent,
-      isKeyDown: false,
       keyPressed: '',
       rotationLeft: '',
+      rotationRight: '',
+      rightFirst: false,
+      leftFirst: false,
+      tweensSetup: false,
     };
     this.saveKeyPressed = this.saveKeyPressed.bind(this);
     this.setUpTweens = this.setUpTweens.bind(this);
@@ -19,54 +22,56 @@ class Ground extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ 
-      keyDownEvent: nextProps.keyDownEvent,
-      keyUpEvent: nextProps.keyUpEvent,
+    const setUpPromise = new Promise((resolve) => {
+      resolve(
+        this.setState({ 
+          keyDownEvent: nextProps.keyDownEvent,
+          keyUpEvent: nextProps.keyUpEvent
+        })
+      );
     });
-    this.handleKeyDown(this.state.keyDownEvent);
-    this.handleKeyUp(this.state.keyUpEvent);
+
+    setUpPromise
+    .then(() => {
+      this.handleKeyDown(this.state.keyDownEvent);
+      this.handleKeyUp(this.state.keyUpEvent);      
+    });
   }
 
   saveKeyPressed(keyPressed) {
     this.setState({ keyPressed });
   }
   setUpTweens() {
+    if (this.state.rotationLeft != '') { 
+      this.state.rotationLeft.kill(); 
+    }
+    if (this.state.rotationRight != '') {
+      this.state.rotationRight.kill();       
+    }
+
     const ground = this.ground;
     this.setState({
-      rotationLeft: TweenMax.to(ground, 0.5, { css: { rotation: '-=45', transformOrigin: '50% 50%'}, paused: true }),
-      rotationRight: TweenMax.to(ground, 0.5, { css: { rotation: '+=45', transformOrigin: '50% 50%'}, paused: true }),
+      rotationLeft: TweenMax.to(ground, 500, { css: { rotation: '-=36000', transformOrigin: '50% 50%'}, ease: Power1.easeOut, paused: true, repeat: -1 }),
+      rotationRight: TweenMax.to(ground, 500, { css: { rotation: '+=36000', transformOrigin: '50% 50%'}, ease: Power1.easeOut, paused: true, repeat: -1 }),
     });
+    return;
   }
 
   handleKeyDown(event) {
     this.setUpTweens();
+
+    console.log(event);
     if(event != '') {
       if (event.type == 'keydown') {
-
+        
         if (event.key === 'ArrowLeft') {
-          if (this.state.keyPressed == 'right') {
-            this.state.rotationRight.pause();
-          }
-          if (this.state.keyPressed == '') {
-            this.state.rotationLeft.play();
-            return;
-          }
-
-          this.saveKeyPressed('left');
-          this.state.rotationLeft.resume();
+          // console.log(event);
+          this.state.rotationRight.resume();
         }
 
         if (event.key == 'ArrowRight') {
-          if (this.state.keyPressed == 'left') {
-            this.state.rotationLeft.pause();
-          }
-          if (this.state.keyPressed == '') {
-            this.state.rotationRight.play();
-            return;
-          }
-
-          this.saveKeyPressed('right');
-          this.state.rotationRight.resume();
+          // console.log(event);
+          this.state.rotationLeft.resume();          
         }  
       }
     }
@@ -74,20 +79,10 @@ class Ground extends Component {
 
   handleKeyUp(event) {
     if (event != '') {
-      if (event.type == 'keyup') {
-        if (event.key === "ArrowLeft") {
-          if (this.state.keyPressed == 'left') {
-            this.saveKeyPressed('');            
-          }
-          this.state.rotationLeft.pause();
-        }
-
-        if (event.key === "ArrowRight") {
-          if (this.state.keyPressed == 'right') {
-            this.saveKeyPressed('');            
-          }
-          this.state.rotationRight.pause();
-        }   
+      if (event.type === 'keyup') {
+        console.log(event);
+        this.state.rotationLeft.pause();
+        this.state.rotationRight.pause(); 
       }
     }    
   }

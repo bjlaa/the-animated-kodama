@@ -15,10 +15,19 @@ class HomePage extends Component {
 
   componentDidMount() {
     document.body.addEventListener('keydown', (event) => {
-      this.setState({ keyDownEvent: event });
+      if (this.state.keyDownEvent == '') {
+        if (this.state.keyUpEvent != '') {
+          this.setState({ keyUpEvent: '' });          
+        }
+
+        this.setState({ keyDownEvent: event });        
+      }
     });
     document.body.addEventListener('keyup', (event) => {
-      this.setState({ keyUpEvent: event });
+      this.setState({ 
+        keyUpEvent: event,
+        keyDownEvent: '',
+      });
     });
   }
 
