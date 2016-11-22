@@ -19,45 +19,40 @@ class Character extends Component {
     },
     {
       css: {
-        transform: 'translate(0, -520px)',
-      },
-      ease: Elastic,
+        transform: 'translate(0, 0px)',
+      }
     }, 9)
     .to(character, 0.15, {
       css: {
-        transform: 'translate(0, -550px)',
-      },
-      ease: Elastic,
+        transform: 'translate(0, 50px)',
+      }
     })
     .to(character, 0.13, {
       css: {
-        transform: 'translate(0, -520px)',
-      },
-      ease: Elastic,
+        transform: 'translate(0, 0px)',
+      }
     })
     .to(character, 0.11, {
       css: {
-        transform: 'translate(0, -535px)',
+        transform: 'translate(0, 15px)',
       },
       ease: Elastic,
     })
     .to(character, 0.09, {
       css: {
-        transform: 'translate(0, -520px)',
-      },
-      ease: Elastic,
+        transform: 'translate(0, 0px)',
+      }
     })
     .to(character, 0.11, {
       css: {
-        transform: 'translate(0, -525px)',
+        transform: 'translate(0, 5px)',
       },
       ease: Elastic,
     })
     .to(character, 0.09, {
       css: {
-        transform: 'translate(0, -520px)',
-      },
-      ease: Elastic,
+        transform: 'translate(0, 0px)',
+      }
     });
   }
   render() {

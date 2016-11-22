@@ -5,11 +5,14 @@
 @import 'character';
 
 .sun {
-  transform: translate(-40%, -15%);
+  transform: translate(-100px, 5px);
+  /*animation: rotate 5s infinite linear;*/
+  transform-origin: 50% 50%;
 }
 
 .ground {
-  transform: translate(0, -130%) scale(2);
+  display:none;
+  transform: scale(2);
   color: transparent;
   background: repeating-linear-gradient(
     45deg,

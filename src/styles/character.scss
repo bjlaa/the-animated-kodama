@@ -1,22 +1,42 @@
 .character {
-  transform: translate(0, -3000px);
+  width: 80px;
+  margin-top: -10%;
+  transform: rotateY(180deg);
+}
+.head {
+  position: absolute;
+  margin-left: 140%;
+  stroke-width: 1px;
 }
 .torso {
-  transform: translate(200%, -140%);
+  position: absolute;
+  margin: 235%  0 0 140%;
+  stroke-width: 2px;
 }
 .right {
   .arm {
-    transform: translate(120%, -200%);
+    position: absolute;
+    margin: 230% 0 0 270%;
+    transform: rotateY(180deg) rotate(45deg);
+    stroke-width: 2px;
   }
   .leg {
-    transform: translate(50%, -40%);
+    position: absolute;
+    margin: 420% 0 0 260%;
+    stroke-width: 2px;
   }
 }
 .left {
   .arm {
-    transform: translate(250%, -520%);
+    position: absolute;
+    margin: 230% 0 0 110%;
+    transform: rotate(45deg);
+    stroke-width: 2px;
   }
   .leg {
-    transform: translate(115%, -320%);
+    position: absolute;
+    transform: rotateY(180deg) rotate(5deg);
+    margin: 430% 0 0 140%;
+    stroke-width: 2px;
   }
 }
