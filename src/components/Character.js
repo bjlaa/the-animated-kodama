@@ -7,6 +7,7 @@ import Arm from './Arm';
 import Leg from './Leg';
 
 class Character extends Component {
+  /*
   componentDidMount() {
     const character = this.character;
     const animationIntroCharacter = new TimelineLite();
@@ -55,6 +56,8 @@ class Character extends Component {
       }
     });
   }
+
+  */
   render() {
     return (
       <div className="character" ref={(character) => this.character = character}>

@@ -1,6 +1,8 @@
 .canvas {
+  /*
   display: none;
   opacity: 0;
+  */
 }
 @import 'character';
 
@@ -11,19 +13,10 @@
 }
 
 .ground {
-  display:none;
-  transform: scale(2);
-  color: transparent;
-  background: repeating-linear-gradient(
-    45deg,
-    #606dbc,
-    #606dbc 10px,
-    #465298 10px,
-    #465298 20px
-  );
-}
-.ground-rotation {
-  animation: rotate 2s infinite;
+  position: absolute;
+  transform: scale(10);
+  margin: 74% 0 0 0%;
+  stroke-width: 0.25;
 }
 
 @keyframes rotate {

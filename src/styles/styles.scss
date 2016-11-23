@@ -15,8 +15,9 @@ body {
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
-  height: 100vh;
+  max-height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 td {
