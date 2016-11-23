@@ -2,29 +2,31 @@ import React from 'react';
 
 const Head = () => {
   return (
-    <svg className="head" x="0px" y="0px" width="220px" height="220px" viewBox="0 0 55 55" >
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="2.164" y1="14.551" x2="12.478" y2="44.034"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="2.164" y1="14.551" x2="25.37" y2="9.17"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="21.334" y1="2.668" x2="24.137" y2="9.17"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="21.334" y1="1.659" x2="28.061" y2="9.17"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="27.051" y1="3.453" x2="28.061" y2="9.73"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="28.061" y1="4.013" x2="33.105" y2="9.17"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="33.105" y1="9.17" x2="53.621" y2="15.112"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="53.061" y1="15.112" x2="41.85" y2="48.854"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="12.478" y1="44.034" x2="41.85" y2="48.854"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="16.625" y1="19.596" x2="12.478" y2="24.417"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="16.625" y1="20.269" x2="22.006" y2="22.847"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="21.334" y1="23.296" x2="22.006" y2="26.323"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="12.478" y1="24.417" x2="14.552" y2="28.116"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="15.168" y1="28.116" x2="19.316" y2="28.116"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="22.006" y1="26.323" x2="18.531" y2="28.677"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="33.89" y1="22.847" x2="39.047" y2="20.269"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="39.047" y1="20.269" x2="43.363" y2="23.296"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="43.363" y1="23.296" x2="41.85" y2="28.116"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="33.89" y1="22.847" x2="34.562" y2="26.995"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="34.562" y1="26.995" x2="37.59" y2="29.293"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="36.777" y1="28.677" x2="42.606" y2="28.116"/>
-      <line fill="none" stroke="#000000" strokeMiterlimit="10" x1="24.137" y1="35.627" x2="32.531" y2="35.963"/>
+    <svg className="head" x="0px" y="0px" width="220px" height="220px" viewBox="0 0 220 220">
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="8.656" y1="58.204" x2="49.912" y2="176.136"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="8.656" y1="58.204" x2="101.48" y2="36.68"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="85.336" y1="10.672" x2="98.79" y2="38.92"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="85.336" y1="10.672" x2="112.244" y2="36.68"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="108.204" y1="13.812" x2="112.244" y2="38.92"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="108.204" y1="13.812" x2="132.42" y2="36.68"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="132.42" y1="36.68" x2="214.484" y2="60.448"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="212.244" y1="60.448" x2="167.4" y2="195.416"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="49.912" y1="176.136" x2="167.4" y2="195.416"/>
+      <line fillRule="evenodd" className="leftEye1" fill="black" stroke="#000000" x1="66.5" y1="78.384" x2="49.912" y2="97.668"/>
+      <line fillRule="evenodd" className="leftEye2" fill="black" stroke="#000000" x1="66.5" y1="81.076" x2="88.024" y2="91.388"/>
+      <line fillRule="evenodd" className="leftEye3" fill="black" stroke="#000000" x1="85.336" y1="93.184" x2="88.024" y2="105.292"/>
+      <line fillRule="evenodd" className="leftEye4" fill="black" stroke="#000000" x1="49.912" y1="97.668" x2="58.208" y2="112.464"/>
+      <line fillRule="evenodd" className="leftEye5" fill="black" stroke="#000000" x1="58.208" y1="112.464" x2="77.264" y2="112.464"/>
+      <line fillRule="evenodd" className="leftEye6" fill="black" stroke="#000000" x1="88.024" y1="105.292" x2="74.124" y2="114.708"/>
+      <line fillRule="evenodd" className="rightEye1" fill="black" stroke="#000000" x1="135.561" y1="91.388" x2="156.188" y2="81.076"/>
+      <line fillRule="evenodd" className="rightEye2" fill="black" stroke="#000000" x1="156.188" y1="81.076" x2="173.452" y2="93.184"/>
+      <line fillRule="evenodd" className="rightEye3" fill="black" stroke="#000000" x1="173.452" y1="93.184" x2="167.4" y2="112.464"/>
+
+      <line fillRule="evenodd" className="rightEye4" fill="black" stroke="#000000" x1="135.561" y1="91.388" x2="138.248" y2="107.98"/>
+
+      <line fillRule="evenodd" className="rightEye5" fill="black" stroke="#000000" x1="138.248" y1="107.98" x2="150.359" y2="117.172"/>
+      <line fillRule="evenodd" className="rightEye6" fill="black" stroke="#000000" x1="147.107" y1="114.708" x2="170.424" y2="112.464"/>
+      <line fillRule="evenodd" fill="black" stroke="#000000" x1="96.548" y1="142.508" x2="130.124" y2="143.852"/>
     </svg>
   );
 };

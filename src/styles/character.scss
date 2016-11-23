@@ -5,13 +5,15 @@
 }
 .head {
   position: absolute;
-  margin-left: 140%;
-  stroke-width: 1px;
+  margin:10% 0 0 140%;
+  stroke-width: 4px;
+  color: white;
 }
 .torso {
   position: absolute;
-  margin: 235%  0 0 140%;
+  margin: 242%  0 0 140%;
   stroke-width: 2px;
+  transform: scale(0.9);
 }
 .right {
   .arm {
