@@ -7,10 +7,14 @@
 @import 'character';
 
 .sun {
-  transform: translate(-100px, 5px);
+  transform: translate(-100px, 55px) scale(2);
   /*animation: rotate 5s infinite linear;*/
   transform-origin: 50% 50%;
 }
+.sun-rotation {
+  animation: rotate 10s infinite linear;
+  transform-origin: 50px 50px;
+} 
 
 .ground {
   position: absolute;
@@ -21,9 +25,15 @@
 
 @keyframes rotate {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1) ;
+  }
+  25% {
+    transform: rotate(5deg) scale(0.95);
+  }
+  75% {
+    transform: rotate(-5deg) scale(0.95);
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(0deg) scale(1) ;
   }
 }
