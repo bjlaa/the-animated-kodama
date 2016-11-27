@@ -32,7 +32,7 @@
 .ground {
   position: absolute;
   transform: scale(10);
-  margin: 60% 0 0 14%;
+  margin: 840px 0 0 200px;
   stroke-width: 0.25;
 }
 
@@ -81,6 +81,7 @@
 }
 @keyframes rotate-moon {
   0% {
+    opacity: 1;
     transform: rotate(0deg);
   }
   40% {
@@ -89,7 +90,12 @@
   80% {
     transform: rotate(360deg);
   }
+  81% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
   100% {
     transform: rotate(360deg);
+    opacity: 0;
   }
 }
