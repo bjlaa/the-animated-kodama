@@ -3,27 +3,55 @@
   display: none;
   opacity: 0;
   */
+  
 }
 @import 'character';
 
 .sun {
-  transform: translate(-100px, 55px) scale(2);
-  /*animation: rotate 5s infinite linear;*/
+  transform: translate(-100%, 50%) scale(2);
   transform-origin: 50% 50%;
 }
+.sun-container {
+  animation: rotate-sun 20s infinite linear;
+  transform-origin: 300px 600px;
+}
 .sun-rotation {
-  animation: rotate 10s infinite linear;
+  animation: sun-movement 10s infinite linear;
   transform-origin: 50px 50px;
 } 
+
+.moon {
+  transform: translate(850%, 800%) scale(2);
+}
+
+.moon-container {
+  animation: rotate-moon 20s infinite linear;
+  transform-origin: 300px 600px;
+}
 
 .ground {
   position: absolute;
   transform: scale(10);
-  margin: 74% 0 0 0%;
+  margin: 60% 0 0 14%;
   stroke-width: 0.25;
 }
 
-@keyframes rotate {
+@keyframes daynight {
+  0% {
+    background: rgba(128, 128, 128, 0);
+  }
+  25% {
+    background: rgba(128, 128, 128, 0);
+  }
+  60% {
+    background: rgba(128, 128, 128, 0.5);
+  }
+  100% {
+    background: rgba(128, 128, 128, 0);
+  }
+}
+
+@keyframes sun-movement {
   0% {
     transform: rotate(0deg) scale(1) ;
   }
@@ -35,5 +63,33 @@
   }
   100% {
     transform: rotate(0deg) scale(1) ;
+  }
+}
+@keyframes rotate-sun {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(125deg);
+  }
+  80% {
+    transform: rotate(300deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-moon {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
