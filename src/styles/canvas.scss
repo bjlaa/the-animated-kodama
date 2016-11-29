@@ -21,11 +21,14 @@
 } 
 
 .moon {
-  transform: translate(850%, 800%) scale(2);
+  transform: translate(-350%, 800%) scale(2);
+}
+.moon > line {
+  animation: daynightchar 20s infinite linear;  
 }
 
 .moon-container {
-  animation: rotate-moon 20s infinite linear;
+  animation: rotate-moon 20s 9s infinite linear;
   transform-origin: 300px 600px;
 }
 
@@ -35,20 +38,8 @@
   margin: 840px 0 0 200px;
   stroke-width: 0.25;
 }
-
-@keyframes daynight {
-  0% {
-    background: rgba(128, 128, 128, 0);
-  }
-  25% {
-    background: rgba(128, 128, 128, 0);
-  }
-  60% {
-    background: rgba(128, 128, 128, 0.5);
-  }
-  100% {
-    background: rgba(128, 128, 128, 0);
-  }
+.ground > line {
+  animation: daynightchar 20s infinite linear;
 }
 
 @keyframes sun-movement {
@@ -81,21 +72,36 @@
 }
 @keyframes rotate-moon {
   0% {
-    opacity: 1;
     transform: rotate(0deg);
   }
-  40% {
-    transform: rotate(180deg);
-  }
-  80% {
-    transform: rotate(360deg);
-  }
-  81% {
-    transform: rotate(360deg);
-    opacity: 0;
+  30% {
+    transform: rotate(220deg);
   }
   100% {
     transform: rotate(360deg);
-    opacity: 0;
+  }
+}
+
+@keyframes daynightchar {
+  0% {
+    stroke: black;
+  }
+  25% {
+    stroke: black;
+  }
+  45% {
+    stroke: black;
+  }
+  46% {
+    stroke: white;
+  }
+  78% {
+    stroke: white;
+  }
+  79% {
+    stroke: black;
+  }
+  100% {
+    stroke: black;
   }
 }

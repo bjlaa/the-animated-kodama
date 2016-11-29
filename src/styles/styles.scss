@@ -36,18 +36,28 @@ td.fuel-savings-label { width: 175px; }
 
 @keyframes daynight {
   0% {
-    background: rgba(128, 128, 128, 0);
+    background: rgba(0, 0, 0, 0);
   }
-  30% {
-    background: rgba(128, 128, 128, 0);
+  25% {
+    background: rgba(0, 0, 0, 0);
   }
-  60% {
-    background: rgba(128, 128, 128, 0.7);
+  45% {
+    background: rgba(0, 0, 0, 0);
+  }
+  46% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  78% {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  79% {
+    background: rgba(0, 0, 0, 0);
   }
   100% {
-    background: rgba(128, 128, 128, 0);
+    background: rgba(0, 0, 0, 0);
   }
 }
+
 
 @import 'header';
 @import  'canvas';

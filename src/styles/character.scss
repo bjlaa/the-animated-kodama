@@ -2,6 +2,7 @@
   position: absolute;
   width: 80px;
   margin-top: -90px;
+
 }
 .head {
   position: absolute;
@@ -9,12 +10,22 @@
   stroke-width: 4px;
   color: white;
 }
+.head > line {
+  animation: daynightchar 20s infinite linear;
+}
+svg {
+  
+}
 .torso {
   position: absolute;
   margin: 242%  0 0 140%;
   stroke-width: 2px;
   transform: scale(0.9);
 }
+.torso > line {
+  animation: daynightchar 20s infinite linear;
+}
+
 .right {
   .arm {
     position: absolute;
@@ -22,6 +33,10 @@
     transform: rotateY(180deg) rotate(45deg);
     stroke-width: 2px;
   }
+  .arm > line {
+    animation: daynightchar 20s infinite linear;
+  }
+
   .leg {
     position: absolute;
     margin: 420% 0 0 260%;
@@ -40,5 +55,35 @@
     transform: rotateY(180deg) rotate(5deg);
     margin: 430% 0 0 140%;
     stroke-width: 2px;
+  }
+}
+.arm > line {
+  animation: daynightchar 20s infinite linear;
+}
+.leg > line {
+  animation: daynightchar 20s infinite linear;
+}
+
+@keyframes daynightchar {
+  0% {
+    stroke: black;
+  }
+  25% {
+    stroke: black;
+  }
+  45% {
+    stroke: black;
+  }
+  46% {
+    stroke: white;
+  }
+  78% {
+    stroke: white;
+  }
+  79% {
+    stroke: black;
+  }
+  100% {
+    stroke: black;
   }
 }
