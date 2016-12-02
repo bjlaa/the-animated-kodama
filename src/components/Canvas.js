@@ -104,7 +104,7 @@ class Canvas extends Component {
   animateCharacterStill() {
     const headAnimation = new TimelineMax();
     headAnimation
-    .to('.head', 2, { css: { transform: 'rotate(35deg)' }})
+    .to('.head', 1.5, { css: { transform: 'rotate(35deg)'}, ease: Power2.easeOut})
     .to('.head', 0.01, { css: { transform: 'rotate(-28deg)' }})
     .to('.head', 0.02, { css: { transform: 'rotate(25deg)' }})
     .to('.head', 0.03, { css: { transform: 'rotate(-22deg)' }})
@@ -115,22 +115,23 @@ class Canvas extends Component {
     .to('.head', 0.1, { css: { transform: 'rotate(4deg)' }})
     .to('.head', 0.12, { css: { transform: 'rotate(0deg)' }})
     .to('.head', 1, { css: { transform: 'rotate(1deg)' }})
-    .to('.head', 1, { css: { transform: 'rotate(-1deg)' }})
-    .to('.head', 1.49, { css: { transform: 'rotate(0deg)' }});
+    .to('.head', 1, { css: { transform: 'rotate(-2deg)' }})
+    .to('.head', 1, { css: { transform: 'rotate(-3deg)' }})
+    .to('.head', 0.99, { css: { transform: 'rotate(0deg)' }});
 
     const torso1Animation = new TimelineMax();
     torso1Animation
-    .to('.torso1', 2, { attr: { x2: 33.979, y2: 13.278 }})
+    .to('.torso1', 1.5, { attr: { x2: 33.979, y2: 13.278 }})
     .to('.torso1', 0, { attr: { x2: 33.979, y2: 13.278 }})
     .to('.torso1', 0.02, { attr: { x2: 37.979, y2: 3.278 }})
-    .to('.torso1', 3.98, { attr: { x2: 37.979, y2: 3.278 }});
+    .to('.torso1', 4.48, { attr: { x2: 37.979, y2: 3.278 }});
 
     const torso2Animation = new TimelineMax();
     torso2Animation
-    .to('.torso2', 2, { attr: { x1: 33.979, y1: 13.175 }})
+    .to('.torso2', 1.5, { attr: { x1: 33.979, y1: 13.175 }})
     .to('.torso2', 0, { attr: { x1: 33.979, y1: 13.175 }})
     .to('.torso2', 0.02, { attr: { x1: 37.979, y1: 4.175 }, ease: Power4.easeInOut})
-    .to('.torso2', 3.98, { attr: { x1: 37.979, y1: 4.175 }});
+    .to('.torso2', 4.48, { attr: { x1: 37.979, y1: 4.175 }});
 
     const rightArmAnimation = new TimelineMax();
     rightArmAnimation
