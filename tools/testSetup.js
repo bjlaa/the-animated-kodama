@@ -21,7 +21,7 @@ process.env.NODE_ENV = 'test';
 // before our tests run.
 require('babel-register')();
 
-import { jsdom } from 'jsdom';
+const jsdom = require('jsdom').jsdom;
 
 const doc = jsdom('<!doctype html><html><body></body></html>');
 const win = doc.defaultView;

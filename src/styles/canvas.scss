@@ -1,10 +1,8 @@
 .canvas {
-  /*
   display: none;
   opacity: 0;
-  */
-  
 }
+
 @import 'character';
 
 .sun {
@@ -24,7 +22,7 @@
   transform: translate(-350%, 800%) scale(2);
 }
 .moon > line {
-  animation: daynightchar 20s infinite linear;  
+  animation: daynightchar 20s infinite linear;
 }
 
 .moon-container {

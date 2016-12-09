@@ -4,7 +4,6 @@ import $ from 'jquery';
 
 import Character from './Character';
 import Ground from './Ground';
-import Flower from './Flower';
 import Sun from './Sun';
 import Moon from './Moon';
 
@@ -29,8 +28,6 @@ class Canvas extends Component {
   }
   componentDidMount() {
     setTimeout(() => this.animateCharacterStill(), 1);
-    // this.animateCharacterStill();
-    /*
     const canvas = this.canvas;
 
     const animationIntroCanvas = new TimelineMax();
@@ -38,7 +35,6 @@ class Canvas extends Component {
     animationIntroCanvas
     .to(canvas, 0, { display: 'block' }, 7)
     .to(canvas, 1.5, { opacity: 1 }, 7);
-    */
   }
 
   componentWillReceiveProps(nextProps) {
@@ -68,8 +64,10 @@ class Canvas extends Component {
 
     const ground = $('.ground');
     this.setState({
+      /*eslint-disable */
       rotationLeft: TweenMax.to(ground, 500, { css: { rotation: '-=36000', transformOrigin: '50% 50%'}, ease: Power1.easeOut, paused: true, repeat: -1 }),
       rotationRight: TweenMax.to(ground, 500, { css: { rotation: '+=36000', transformOrigin: '50% 50%'}, ease: Power1.easeOut, paused: true, repeat: -1 }),
+      /*eslint-enable */
     });
     return;
   }
@@ -104,7 +102,9 @@ class Canvas extends Component {
   animateCharacterStill() {
     const headAnimation = new TimelineMax();
     headAnimation
+    /*eslint-disable */
     .to('.head', 1.5, { css: { transform: 'rotate(35deg)'}, ease: Power2.easeOut})
+    /*eslint-enable */
     .to('.head', 0.01, { css: { transform: 'rotate(-28deg)' }})
     .to('.head', 0.02, { css: { transform: 'rotate(25deg)' }})
     .to('.head', 0.03, { css: { transform: 'rotate(-22deg)' }})
@@ -130,7 +130,9 @@ class Canvas extends Component {
     torso2Animation
     .to('.torso2', 1.5, { attr: { x1: 33.979, y1: 13.175 }})
     .to('.torso2', 0, { attr: { x1: 33.979, y1: 13.175 }})
+    /*eslint-disable */
     .to('.torso2', 0.02, { attr: { x1: 37.979, y1: 4.175 }, ease: Power4.easeInOut})
+    /*eslint-enable */
     .to('.torso2', 4.48, { attr: { x1: 37.979, y1: 4.175 }});
 
     const rightArmAnimation = new TimelineMax();
@@ -260,6 +262,14 @@ class Canvas extends Component {
 
 Canvas.propTypes = {
   children: PropTypes.element,
+  keyDownEvent: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
+  keyUpEvent: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
 };
 
 export default Canvas;

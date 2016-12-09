@@ -11,10 +11,8 @@ import Leg from './Leg';
 describe('Character', () => {
   it('should render a div having a "character" class', () => {
     const wrapper = shallow(<Character />);
-    const expected = 'character';
-    const actual = wrapper.find('div').prop('className');
 
-    expect(actual).to.equal(expected);
+    expect(wrapper.find('div.character')).to.have.length(1);
   });
 
   it('should render a <Head />', () => {

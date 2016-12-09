@@ -15,7 +15,7 @@ describe('Header', () => {
 
   it('should render an h1 containing "The Animation-Man"', () => {
     const wrapper = shallow(<Header />);
-    const expected = 'The Animation-Man';
+    const expected = 'The Animated Kodawa';
     const actual = wrapper.find('h1').text();
 
     expect(actual).to.equal(expected);
